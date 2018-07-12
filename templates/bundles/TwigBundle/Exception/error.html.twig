@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h1>Critical exception</h1>
+                <p>
+                    An Error Occurred: {{ status_text }} (Code: {{ status_code }})<br>
+                    <a href="{{ path('dashboard_index') }}">return to the homepage</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

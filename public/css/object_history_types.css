@@ -1,0 +1,571 @@
+/**
+ * === TRANSFER (ID: 0) ===
+ */
+.operation_transfer {
+
+}
+.operation_slide_transfer {
+    background-image: -webkit-gradient(linear, right top, left top, color-stop(50%, transparent), color-stop(50%, #81CA80));
+    background-image: -webkit-linear-gradient(right, transparent 50%, #81CA80 50%);
+    background-image: -o-linear-gradient(right, transparent 50%, #81CA80 50%);
+    background-image: linear-gradient(to left, transparent 50%, rgba(129, 202, 128, 0.2) 50%);
+}
+
+/**
+ * === LIMIT_ORDER_CREATE (ID: 1) ===
+ */
+.operation_limit_order_create {
+
+}
+.operation_slide_limit_order_create {
+    background-image: -webkit-gradient(linear, right top, left top, color-stop(50%, transparent), color-stop(50%, #6BBCD7));
+    background-image: -webkit-linear-gradient(right, transparent 50%, #6BBCD7 50%);
+    background-image: -o-linear-gradient(right, transparent 50%, #6BBCD7 50%);
+    background-image: linear-gradient(to left, transparent 50%, rgba(107, 188, 215, 0.2) 50%);
+}
+
+/**
+ * === LIMIT_ORDER_CANCEL (ID: 2) ===
+ */
+.operation_limit_order_cancel {
+
+}
+.operation_slide_limit_order_cancel {
+    background-image: -webkit-gradient(linear, right top, left top, color-stop(50%, transparent), color-stop(50%, #E9C842));
+    background-image: -webkit-linear-gradient(right, transparent 50%, #E9C842 50%);
+    background-image: -o-linear-gradient(right, transparent 50%, #E9C842 50%);
+    background-image: linear-gradient(to left, transparent 50%, rgba(233, 200, 66, 0.2) 50%);
+}
+
+/**
+ * === CALL_ORDER_UPDATE (ID: 3) ===
+ */
+.operation_call_order_update {
+
+}
+.operation_slide_call_order_update {
+    background-image: -webkit-gradient(linear, right top, left top, color-stop(50%, transparent), color-stop(50%, #E96562));
+    background-image: -webkit-linear-gradient(right, transparent 50%, #E96562 50%);
+    background-image: -o-linear-gradient(right, transparent 50%, #E96562 50%);
+    background-image: linear-gradient(to left, transparent 50%, rgba(233, 101, 98, 0.2) 50%);
+}
+
+/**
+ * === FILL_ORDER_VIRTUAL (ID: 4) ===
+ */
+.operation_fill_order_virtual {
+
+}
+.operation_slide_fill_order_virtual {
+    background-image: -webkit-gradient(linear, right top, left top, color-stop(50%, transparent), color-stop(50%, #008000));
+    background-image: -webkit-linear-gradient(right, transparent 50%, #008000 50%);
+    background-image: -o-linear-gradient(right, transparent 50%, #008000 50%);
+    background-image: linear-gradient(to left, transparent 50%, rgba(0, 128, 0, 0.2) 50%);
+}
+
+/**
+ * === ACCOUNT_CREATE (ID: 5) ===
+ */
+.operation_account_create {
+
+}
+.operation_slide_account_create {
+    background-image: -webkit-gradient(linear, right top, left top, color-stop(50%, transparent), color-stop(50%, #CCCCCC));
+    background-image: -webkit-linear-gradient(right, transparent 50%, #CCCCCC 50%);
+    background-image: -o-linear-gradient(right, transparent 50%, #CCCCCC 50%);
+    background-image: linear-gradient(to left, transparent 50%, rgba(204, 204, 204, 0.2) 50%);
+}
+
+/**
+ * === ACCOUNT_UPDATE (ID: 6) ===
+ */
+.operation_account_update {
+
+}
+.operation_slide_account_update {
+    background-image: -webkit-gradient(linear, right top, left top, color-stop(50%, transparent), color-stop(50%, #FF007F));
+    background-image: -webkit-linear-gradient(right, transparent 50%, #FF007F 50%);
+    background-image: -o-linear-gradient(right, transparent 50%, #FF007F 50%);
+    background-image: linear-gradient(to left, transparent 50%, rgba(255, 0, 127, 0.2) 50%);
+}
+
+/**
+ * === ACCOUNT_WHITELIST (ID: 7) ===
+ */
+.operation_account_whitelist {
+
+}
+.operation_slide_account_whitelist {
+    background-image: -webkit-gradient(linear, right top, left top, color-stop(50%, transparent), color-stop(50%, #FB8817));
+    background-image: -webkit-linear-gradient(right, transparent 50%, #FB8817 50%);
+    background-image: -o-linear-gradient(right, transparent 50%, #FB8817 50%);
+    background-image: linear-gradient(to left, transparent 50%, rgba(251, 136, 23, 0.2) 50%);
+}
+
+/**
+ * === ACCOUNT_UPGRADE (ID: 8) ===
+ */
+.operation_account_upgrade {
+
+}
+.operation_slide_account_upgrade {
+    background-image: -webkit-gradient(linear, right top, left top, color-stop(50%, transparent), color-stop(50%, #552AFF));
+    background-image: -webkit-linear-gradient(right, transparent 50%, #552AFF 50%);
+    background-image: -o-linear-gradient(right, transparent 50%, #552AFF 50%);
+    background-image: linear-gradient(to left, transparent 50%, rgba(85, 42, 255, 0.2) 50%);
+}
+
+/**
+ * === ACCOUNT_TRANSFER (ID: 9) ===
+ */
+.operation_account_transfer {
+
+}
+.operation_slide_account_transfer {
+    background-image: -webkit-gradient(linear, right top, left top, color-stop(50%, transparent), color-stop(50%, #AA2AFF));
+    background-image: -webkit-linear-gradient(right, transparent 50%, #AA2AFF 50%);
+    background-image: -o-linear-gradient(right, transparent 50%, #AA2AFF 50%);
+    background-image: linear-gradient(to left, transparent 50%, rgba(170, 42, 255, 0.2) 50%);
+}
+
+/**
+ * === ASSET_CREATE (ID: 10) ===
+ */
+.operation_asset_create {
+
+}
+.operation_slide_asset_create {
+    background-image: -webkit-gradient(linear, right top, left top, color-stop(50%, transparent), color-stop(50%, #D400FF));
+    background-image: -webkit-linear-gradient(right, transparent 50%, #D400FF 50%);
+    background-image: -o-linear-gradient(right, transparent 50%, #D400FF 50%);
+    background-image: linear-gradient(to left, transparent 50%, rgba(212, 0, 255, 0.2) 50%);
+}
+
+/**
+ * === ASSET_UPDATE (ID: 11) ===
+ */
+.operation_asset_update {
+
+}
+.operation_slide_asset_update {
+    background-image: -webkit-gradient(linear, right top, left top, color-stop(50%, transparent), color-stop(50%, #0000FF));
+    background-image: -webkit-linear-gradient(right, transparent 50%, #0000FF 50%);
+    background-image: -o-linear-gradient(right, transparent 50%, #0000FF 50%);
+    background-image: linear-gradient(to left, transparent 50%, rgba(0, 0, 255, 0.2) 50%);
+}
+
+/**
+ * === ASSET_UPDATE_BITASSET (ID: 12) ===
+ */
+.operation_asset_update_bitasset {
+
+}
+.operation_slide_asset_update_bitasset {
+    background-image: -webkit-gradient(linear, right top, left top, color-stop(50%, transparent), color-stop(50%, #AA7FFF));
+    background-image: -webkit-linear-gradient(right, transparent 50%, #AA7FFF 50%);
+    background-image: -o-linear-gradient(right, transparent 50%, #AA7FFF 50%);
+    background-image: linear-gradient(to left, transparent 50%, rgba(170, 127, 255, 0.2) 50%);
+}
+
+/**
+ * === ASSET_UPDATE_FEED_PRODUCERS (ID: 13) ===
+ */
+.operation_asset_update_feed_producers {
+
+}
+.operation_slide_asset_update_feed_producers {
+    background-image: -webkit-gradient(linear, right top, left top, color-stop(50%, transparent), color-stop(50%, #2A7FFF));
+    background-image: -webkit-linear-gradient(right, transparent 50%, #2A7FFF 50%);
+    background-image: -o-linear-gradient(right, transparent 50%, #2A7FFF 50%);
+    background-image: linear-gradient(to left, transparent 50%, rgba(42, 127, 255, 0.2) 50%);
+}
+
+/**
+ * === ASSET_ISSUE (ID: 14) ===
+ */
+.operation_asset_issue {
+
+}
+.operation_slide_asset_issue {
+    background-image: -webkit-gradient(linear, right top, left top, color-stop(50%, transparent), color-stop(50%, #7FAAFF));
+    background-image: -webkit-linear-gradient(right, transparent 50%, #7FAAFF 50%);
+    background-image: -o-linear-gradient(right, transparent 50%, #7FAAFF 50%);
+    background-image: linear-gradient(to left, transparent 50%, rgba(127, 170, 255, 0.2) 50%);
+}
+
+/**
+ * === ASSET_RESERVE (ID: 15) ===
+ */
+.operation_asset_reserve {
+
+}
+.operation_slide_asset_reserve {
+    background-image: -webkit-gradient(linear, right top, left top, color-stop(50%, transparent), color-stop(50%, #55FF7F));
+    background-image: -webkit-linear-gradient(right, transparent 50%, #55FF7F 50%);
+    background-image: -o-linear-gradient(right, transparent 50%, #55FF7F 50%);
+    background-image: linear-gradient(to left, transparent 50%, rgba(85, 255, 127, 0.2) 50%);
+}
+
+/**
+ * === ASSET_FUND_FEE_POOL (ID: 16) ===
+ */
+.operation_asset_fund_fee_pool {
+
+}
+.operation_slide_asset_fund_fee_pool {
+    background-image: -webkit-gradient(linear, right top, left top, color-stop(50%, transparent), color-stop(50%, #55FF7F));
+    background-image: -webkit-linear-gradient(right, transparent 50%, #55FF7F 50%);
+    background-image: -o-linear-gradient(right, transparent 50%, #55FF7F 50%);
+    background-image: linear-gradient(to left, transparent 50%, rgba(85, 255, 127, 0.2) 50%);
+}
+
+/**
+ * === ASSET_SETTLE (ID: 17) ===
+ */
+.operation_asset_settle {
+
+}
+.operation_slide_asset_settle {
+    background-image: -webkit-gradient(linear, right top, left top, color-stop(50%, transparent), color-stop(50%, #FFFFAA));
+    background-image: -webkit-linear-gradient(right, transparent 50%, #FFFFAA 50%);
+    background-image: -o-linear-gradient(right, transparent 50%, #FFFFAA 50%);
+    background-image: linear-gradient(to left, transparent 50%, rgba(255, 255, 170, 0.2) 50%);
+}
+
+/**
+ * === ASSET_GLOBAL_SETTLE (ID: 18) ===
+ */
+.operation_asset_global_settle {
+
+}
+.operation_slide_asset_global_settle {
+    background-image: -webkit-gradient(linear, right top, left top, color-stop(50%, transparent), color-stop(50%, #FFFF7F));
+    background-image: -webkit-linear-gradient(right, transparent 50%, #FFFF7F 50%);
+    background-image: -o-linear-gradient(right, transparent 50%, #FFFF7F 50%);
+    background-image: linear-gradient(to left, transparent 50%, rgba(255, 255, 127, 0.2) 50%);
+}
+
+/**
+ * === ASSET_PUBLISH_FEED (ID: 19) ===
+ */
+.operation_asset_publish_feed {
+
+}
+.operation_slide_asset_publish_feed {
+    background-image: -webkit-gradient(linear, right top, left top, color-stop(50%, transparent), color-stop(50%, #FF2A55));
+    background-image: -webkit-linear-gradient(right, transparent 50%, #FF2A55 50%);
+    background-image: -o-linear-gradient(right, transparent 50%, #FF2A55 50%);
+    background-image: linear-gradient(to left, transparent 50%, rgba(255, 42, 85, 0.2) 50%);
+}
+
+/**
+ * === WITNESS_UPDATE (ID: 20) ===
+ */
+.operation_witness_update {
+
+}
+.operation_slide_witness_update {
+    background-image: -webkit-gradient(linear, right top, left top, color-stop(50%, transparent), color-stop(50%, #FFAA7F));
+    background-image: -webkit-linear-gradient(right, transparent 50%, #FFAA7F 50%);
+    background-image: -o-linear-gradient(right, transparent 50%, #FFAA7F 50%);
+    background-image: linear-gradient(to left, transparent 50%, rgba(255, 170, 127, 0.2) 50%);
+}
+
+/**
+ * === PROPOSAL_CREATE (ID: 21) ===
+ */
+.operation_proposal_create {
+
+}
+.operation_slide_proposal_create {
+    background-image: -webkit-gradient(linear, right top, left top, color-stop(50%, transparent), color-stop(50%, #FFAA55));
+    background-image: -webkit-linear-gradient(right, transparent 50%, #FFAA55 50%);
+    background-image: -o-linear-gradient(right, transparent 50%, #FFAA55 50%);
+    background-image: linear-gradient(to left, transparent 50%, rgba(255, 170, 85, 0.2) 50%);
+}
+
+/**
+ * === PROPOSAL_UPDATE (ID: 22) ===
+ */
+.operation_proposal_update {
+
+}
+.operation_slide_proposal_update {
+    background-image: -webkit-gradient(linear, right top, left top, color-stop(50%, transparent), color-stop(50%, #FF7F55));
+    background-image: -webkit-linear-gradient(right, transparent 50%, #FF7F55 50%);
+    background-image: -o-linear-gradient(right, transparent 50%, #FF7F55 50%);
+    background-image: linear-gradient(to left, transparent 50%, rgba(255, 127, 85, 0.2) 50%);
+}
+
+/**
+ * === PROPOSAL_DELETE (ID: 23) ===
+ */
+.operation_proposal_delete {
+
+}
+.operation_slide_proposal_delete {
+    background-image: -webkit-gradient(linear, right top, left top, color-stop(50%, transparent), color-stop(50%, #FF552A));
+    background-image: -webkit-linear-gradient(right, transparent 50%, #FF552A 50%);
+    background-image: -o-linear-gradient(right, transparent 50%, #FF552A 50%);
+    background-image: linear-gradient(to left, transparent 50%, rgba(255, 85, 42, 0.2) 50%);
+}
+
+/**
+ * === WITHDRAW_PERMISSION_CREATE (ID: 24) ===
+ */
+.operation_withdraw_permission_create {
+
+}
+.operation_slide_withdraw_permission_create {
+    background-image: -webkit-gradient(linear, right top, left top, color-stop(50%, transparent), color-stop(50%, #FF00AA));
+    background-image: -webkit-linear-gradient(right, transparent 50%, #FF00AA 50%);
+    background-image: -o-linear-gradient(right, transparent 50%, #FF00AA 50%);
+    background-image: linear-gradient(to left, transparent 50%, rgba(255, 0, 170, 0.2) 50%);
+}
+
+/**
+ * === WITHDRAW_PERMISSION (ID: 25) ===
+ */
+.operation_withdraw_permission {
+
+}
+.operation_slide_withdraw_permission {
+    background-image: -webkit-gradient(linear, right top, left top, color-stop(50%, transparent), color-stop(50%, #FF00FF));
+    background-image: -webkit-linear-gradient(right, transparent 50%, #FF00FF 50%);
+    background-image: -o-linear-gradient(right, transparent 50%, #FF00FF 50%);
+    background-image: linear-gradient(to left, transparent 50%, rgba(255, 0, 255, 0.2) 50%);
+}
+
+/**
+ * === WITHDRAW_PERMISSION_CLAIM (ID: 26) ===
+ */
+.operation_withdraw_permission_claim {
+
+}
+.operation_slide_withdraw_permission_claim {
+    background-image: -webkit-gradient(linear, right top, left top, color-stop(50%, transparent), color-stop(50%, #FF0055));
+    background-image: -webkit-linear-gradient(right, transparent 50%, #FF0055 50%);
+    background-image: -o-linear-gradient(right, transparent 50%, #FF0055 50%);
+    background-image: linear-gradient(to left, transparent 50%, rgba(255, 0, 85, 0.2) 50%);
+}
+
+/**
+ * === WITHDRAW_PERMISSION_DELETE (ID: 27) ===
+ */
+.operation_withdraw_permission_delete {
+
+}
+.operation_slide_withdraw_permission_delete {
+    background-image: -webkit-gradient(linear, right top, left top, color-stop(50%, transparent), color-stop(50%, #37B68Cc));
+    background-image: -webkit-linear-gradient(right, transparent 50%, #37B68Cc 50%);
+    background-image: -o-linear-gradient(right, transparent 50%, #37B68Cc 50%);
+    background-image: linear-gradient(to left, transparent 50%, rgba(55, 182, 140, 0.2) 50%); (!!!!)
+}
+
+/**
+ * === COMITEE_MEMBER_CREATE (ID: 28) ===
+ */
+.operation_comitee_member_create {
+
+}
+.operation_slide_comitee_member_create {
+    background-image: -webkit-gradient(linear, right top, left top, color-stop(50%, transparent), color-stop(50%, #37B68C));
+    background-image: -webkit-linear-gradient(right, transparent 50%, #37B68C 50%);
+    background-image: -o-linear-gradient(right, transparent 50%, #37B68C 50%);
+    background-image: linear-gradient(to left, transparent 50%, rgba(55, 182, 140, 0.2) 50%);
+}
+
+/**
+ * === COMITEE_MEMBER_UPDATE (ID: 29) ===
+ */
+.operation_comitee_member_update {
+
+}
+.operation_slide_comitee_member_update {
+    background-image: -webkit-gradient(linear, right top, left top, color-stop(50%, transparent), color-stop(50%, #6712E7));
+    background-image: -webkit-linear-gradient(right, transparent 50%, #6712E7 50%);
+    background-image: -o-linear-gradient(right, transparent 50%, #6712E7 50%);
+    background-image: linear-gradient(to left, transparent 50%, rgba(103, 18, 231, 0.2) 50%);
+}
+
+/**
+ * === COMITEE_MEMBER_UPDATE_GLOBAL_PARAMETERS (ID: 30) ===
+ */
+.operation_comitee_member_update_global_parameters {
+
+}
+.operation_slide_comitee_member_update_global_parameters {
+    background-image: -webkit-gradient(linear, right top, left top, color-stop(50%, transparent), color-stop(50%, #B637B6));
+    background-image: -webkit-linear-gradient(right, transparent 50%, #B637B6 50%);
+    background-image: -o-linear-gradient(right, transparent 50%, #B637B6 50%);
+    background-image: linear-gradient(to left, transparent 50%, rgba(182, 55, 182, 0.2) 50%);
+}
+
+/**
+ * === VESTING_BALANCE_CREATE (ID: 31) ===
+ */
+.operation_vesting_balance_create {
+
+}
+.operation_slide_vesting_balance_create {
+    background-image: -webkit-gradient(linear, right top, left top, color-stop(50%, transparent), color-stop(50%, #A5A5A5));
+    background-image: -webkit-linear-gradient(right, transparent 50%, #A5A5A5 50%);
+    background-image: -o-linear-gradient(right, transparent 50%, #A5A5A5 50%);
+    background-image: linear-gradient(to left, transparent 50%, rgba(165, 165, 165, 0.2) 50%);
+}
+
+/**
+ * === VESTING_BALANCE_WITHDRAW (ID: 32) ===
+ */
+.operation_vesting_balance_withdraw {
+
+}
+.operation_slide_vesting_balance_withdraw {
+    background-image: -webkit-gradient(linear, right top, left top, color-stop(50%, transparent), color-stop(50%, #696969));
+    background-image: -webkit-linear-gradient(right, transparent 50%, #696969 50%);
+    background-image: -o-linear-gradient(right, transparent 50%, #696969 50%);
+    background-image: linear-gradient(to left, transparent 50%, rgba(105, 105, 105, 0.2) 50%);
+}
+
+/**
+ * === WORKER_CREATE (ID: 33) ===
+ */
+.operation_worker_create {
+
+}
+.operation_slide_worker_create {
+    background-image: -webkit-gradient(linear, right top, left top, color-stop(50%, transparent), color-stop(50%, #0F0F0F));
+    background-image: -webkit-linear-gradient(right, transparent 50%, #0F0F0F 50%);
+    background-image: -o-linear-gradient(right, transparent 50%, #0F0F0F 50%);
+    background-image: linear-gradient(to left, transparent 50%, rgba(15, 15, 15, 0.2) 50%);
+}
+
+/**
+ * === CUSTOM (ID: 34) ===
+ */
+.operation_custom {
+
+}
+.operation_slide_custom {
+    background-image: -webkit-gradient(linear, right top, left top, color-stop(50%, transparent), color-stop(50%, #0DB762));
+    background-image: -webkit-linear-gradient(right, transparent 50%, #0DB762 50%);
+    background-image: -o-linear-gradient(right, transparent 50%, #0DB762 50%);
+    background-image: linear-gradient(to left, transparent 50%, rgba(13, 183, 98, 0.2) 50%);
+}
+
+/**
+ * === ASSERT (ID: 35) ===
+ */
+.operation_assert {
+
+}
+.operation_slide_assert {
+    background-image: -webkit-gradient(linear, right top, left top, color-stop(50%, transparent), color-stop(50%, #FFFFFF));
+    background-image: -webkit-linear-gradient(right, transparent 50%, #FFFFFF 50%);
+    background-image: -o-linear-gradient(right, transparent 50%, #FFFFFF 50%);
+    background-image: linear-gradient(to left, transparent 50%, #FFFFFF 50%);
+}
+
+/**
+ * === BALANCE_CLAIM (ID: 36) ===
+ */
+.operation_balance_claim {
+
+}
+.operation_slide_balance_claim {
+    background-image: -webkit-gradient(linear, right top, left top, color-stop(50%, transparent), color-stop(50%, #939314));
+    background-image: -webkit-linear-gradient(right, transparent 50%, #939314 50%);
+    background-image: -o-linear-gradient(right, transparent 50%, #939314 50%);
+    background-image: linear-gradient(to left, transparent 50%, rgba(147, 147, 20, 0.2) 50%);
+}
+
+/**
+ * === OVERRIDE_TRANSFER (ID: 37) ===
+ */
+.operation_override_transfer {
+
+}
+.operation_slide_override_transfer {
+    background-image: -webkit-gradient(linear, right top, left top, color-stop(50%, transparent), color-stop(50%, #8D0DB7));
+    background-image: -webkit-linear-gradient(right, transparent 50%, #8D0DB7 50%);
+    background-image: -o-linear-gradient(right, transparent 50%, #8D0DB7 50%);
+    background-image: linear-gradient(to left, transparent 50%, rgba(141, 13, 183, 0.2) 50%);
+}
+
+/**
+ * === TRANSFER_TO_BLIND (ID: 38) ===
+ */
+.operation_transfer_to_blind {
+
+}
+.operation_slide_transfer_to_blind {
+    background-image: -webkit-gradient(linear, right top, left top, color-stop(50%, transparent), color-stop(50%, #C4EFC4));
+    background-image: -webkit-linear-gradient(right, transparent 50%, #C4EFC4 50%);
+    background-image: -o-linear-gradient(right, transparent 50%, #C4EFC4 50%);
+    background-image: linear-gradient(to left, transparent 50%, rgba(196, 239, 196, 0.2) 50%);
+}
+
+/**
+ * === BLIND_TRANSFER (ID: 39) ===
+ */
+.operation_blind_transfer {
+
+}
+.operation_slide_blind_transfer {
+    background-image: -webkit-gradient(linear, right top, left top, color-stop(50%, transparent), color-stop(50%, #F29DF2));
+    background-image: -webkit-linear-gradient(right, transparent 50%, #F29DF2 50%);
+    background-image: -o-linear-gradient(right, transparent 50%, #F29DF2 50%);
+    background-image: linear-gradient(to left, transparent 50%, rgba(242, 157, 242, 0.2) 50%);
+}
+
+/**
+ * === TRANSFER_FROM_BLIND (ID: 40) ===
+ */
+.operation_transfer_from_blind {
+
+}
+.operation_slide_transfer_from_blind {
+    background-image: -webkit-gradient(linear, right top, left top, color-stop(50%, transparent), color-stop(50%, #9D9DF2));
+    background-image: -webkit-linear-gradient(right, transparent 50%, #9D9DF2 50%);
+    background-image: -o-linear-gradient(right, transparent 50%, #9D9DF2 50%);
+    background-image: linear-gradient(to left, transparent 50%, rgba(157, 157, 242, 0.2) 50%);
+}
+
+/**
+ * === ASSET_SETTLE_CANCEL (ID: 41) ===
+ */
+.operation_asset_settle_cancel {
+
+}
+.operation_slide_asset_settle_cancel {
+    background-image: -webkit-gradient(linear, right top, left top, color-stop(50%, transparent), color-stop(50%, #4ECEF8));
+    background-image: -webkit-linear-gradient(right, transparent 50%, #4ECEF8 50%);
+    background-image: -o-linear-gradient(right, transparent 50%, #4ECEF8 50%);
+    background-image: linear-gradient(to left, transparent 50%, rgba(78, 206, 248, 0.2) 50%);
+}
+
+/**
+ * === ASSET_CLAIM_FEES (ID: 42) ===
+ */
+.operation_asset_claim_fees {
+
+}
+.operation_slide_asset_claim_fees {
+    background-image: -webkit-gradient(linear, right top, left top, color-stop(50%, transparent), color-stop(50%, #F8794E));
+    background-image: -webkit-linear-gradient(right, transparent 50%, #F8794E 50%);
+    background-image: -o-linear-gradient(right, transparent 50%, #F8794E 50%);
+    background-image: linear-gradient(to left, transparent 50%, rgba(248, 121, 78, 0.2) 50%);
+}
+
+/**
+ * === FBA_DISTRIBUTE (ID: 43) ===
+ */
+.operation_fba_distribute {
+
+}
+.operation_slide_fba_distribute {
+    background-image: -webkit-gradient(linear, right top, left top, color-stop(50%, transparent), color-stop(50%, #8808B2));
+    background-image: -webkit-linear-gradient(right, transparent 50%, #8808B2 50%);
+    background-image: -o-linear-gradient(right, transparent 50%, #8808B2 50%);
+    background-image: linear-gradient(to left, transparent 50%, rgba(136, 8, 178, 0.2) 50%);
+}

@@ -1,0 +1,143 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-6">
+                <div class="service-block service-block-blue">
+                    <div class="service-block-left col-md-10 col-xs-9 col-lg-9">
+                        <div class="service-block-top">
+                            <div class="sbl">
+                                <img src="/images/globe-icon.png" alt="">
+                            </div>
+                            <div class="sbr">
+                                <a href="#" class="service-heading" data-toggle="tooltip" data-placement="bottom" title="View More">MARKET CAP OF $90.977 Billion</a>
+                                <h4>
+                                    <a href="#">$936.36 @ 0.09118 BTC/ETH </a>
+                                    <span data-toggle="tooltip" data-placement="bottom" title="USD/Eth change"> (-4.54%)</span>
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="service-block-bottom">
+                            <div class="col-xs-4">
+                                <a href="#" data-toggle="tooltip" data-placement="right" title="View List of Blocks">Last Block</a>
+                                <h4>
+                                    <a href="#" data-toggle="tooltip" data-placement="bottom" title="View List of Blocks">4958394</a>
+                                    <span data-toggle="tooltip" data-placement="right" title="Avg Block Time of the latest 5000 blocks"> (14.5s)</span>
+                                </h4>
+                            </div>
+                            <div class="col-xs-4">
+                                <a href="#" data-toggle="tooltip" data-placement="right" title="View List of Transactions">Transactions</a>
+                                <h4>
+                                    <a href="#" data-toggle="tooltip" data-placement="bottom" title="Total Txns counter (updated every 5 mins)">143.67 M</a>
+                                    <span data-toggle="tooltip" data-placement="right" title="Txns per sec"> (11.1 TPS)</span>
+                                </h4>
+                            </div>
+                            <div class="col-xs-4">
+                                <a href="#" data-toggle="tooltip" data-placement="right" title="View INTERVAL BLOCK">INTERVAL BLOCK</a>
+                                <h4>
+                                    <a href="#">3 seconds</a>
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-block-right col-md-2 col-lg-3 col-xs-3">
+                        <div>
+                            <p class="sb-inf">NEW USERS</p>
+                            <span>47</span>
+                        </div>
+                        <div>
+                            <p class="sb-inf">witnesses</p>
+                            <span>2,151</span>
+                        </div>
+                        <div>
+                            <p class="sb-inf">commitee</p>
+                            <span>2,151</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6">
+                <div class="row text-center">
+                    <div class="col-sm-4">
+                        <div class="panel mini-box">
+                            <p class="title">CURRENT BLOCK</p>
+                            <p class="number"><a style="color:blue;" href="{{ path('home_block', {'number': head_block_number}) }}">{{ head_block_number|number_format(0, '.', ',') }}</a></p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="panel mini-box">
+                            <p class="title">TRX/S</p>
+                            <p class="number">23,558,275</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="panel mini-box">
+                            <p class="title">BTS MARKET CAP</p>
+                            <p class="number">23,558,275</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="panel mini-box">
+                            <p class="title">BTS/BTC VOL</p>
+                            <p class="number">23,558,275</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="panel mini-box">
+                            <p class="title">TRX/BLOCK</p>
+                            <p class="number">23,558,275</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="panel mini-box">
+                            <p class="title">STEALTH SUPPLY</p>
+                            <p class="number">23,558,275</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section mt_minus15 mb15">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-6">
+
+
+                <div class="panel panel-profile no-bg">
+                    <div class="panel-heading overflow-h">
+                        <img class="panel-ico-1 panel-ico" src="/images/cubes.png" alt="">
+                        <h2 class="panel-title heading-sm">Blocks</h2>
+                        <a href="/" class="btn-profile pull-right panel-link">View All</a>
+                    </div>
+                    <div class="panel-body nano">
+                        <div class="nano-content">
+{% for block in latest_blocks %}
+                            <div class="profile-event slide-bg-f6fbff">
+                                <div class="profile-event-left">
+                                    <div class="profile-event-id">
+                                        <a href="{{ path('home_block', {'number': block.number}) }}">BLOCK ID</a>
+                                        <p>{{ block.number|number_format(0, '.', ',') }}</p>
+                                    </div>
+                                </div>
+                                <div class="profile-event-right">
+                                    <span>Witness</span>
+                                    <a href="#" data-toggle="tooltip" data-placement="bottom" title="Transaction Hash">{{ block.witness_name }}</a>
+                                    <p class="time-ago"><span class="time">{{ block.date }}</span><span class="ago">({{ block.time_ago }})</span></p>
+                                    <p class="transaction">TRANSACTION COUNT {{ block.transactions|length }}</p>
+                                </div>
+                            </div>
+{% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <div class="panel mb0 panel-default grid-block">
+            <div class="row">
+                <div class="col-xs-12 col-md-6">
+                    <h3 class="grid-block-title">Fee</h3>
+                    <p>
+                        In the BitShares ecosystem every operation is assigned an individual fee.
+                        These fees are subject to change. However, they are defined solely by shareholder
+                        approval, thus each and every shareholder of the BitShares core asset (BTS)
+                        has a say as to what the fees should be.
+                    </p>
+                    <p class="operations-require">*: These operations require Lifetime membership!</p>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                    <p class="right-grid-block-text">
+                        If shareholders can be convinced to reduce a certain fee and consensus is reached,
+                        the fee will be reduced automatically by the blockchain. Changes of blockchain
+                        parameters are proposed by members of the committee. These members are voted
+                        by shareholders and improve the flexibility and reaction rate.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+
+                <div class="table-panel mb17">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-9">
+                                <h3>General</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body table-responsive no-input">
+                        <table class="table filter-table bgn">
+                            <thead>
+                                <tr>
+                                    <th>Operation</th>
+                                    <th>Regular fee</th>
+                                    <th>Premium fee</th>
+                                    <th>Price per KByte</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+{% for fee in fees %}
+                                <tr>
+                                    <td class="operation_{{ fee[2]['alias'] }}">{{ fee[2]['title'] }}</td>
+                                    <td>{{ fee[1].fee }}</td>
+                                    <td>{{ fee[1].premium_fee }}</td>
+                                    <td>{{ fee[1].price_per_kbyte }}</td>
+                                </tr>
+{% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

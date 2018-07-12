@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+<section class="section mt_minus15 mb15">
+    <div class="container">
+        <div class="row">
+            <h3>Results for "<b>{{ query }}</b>"</h3>
+        </div>
+        <div class="row">
+            {% if block is not null %}
+                <a style="color:black;" href="{{ path('block_by_number', {'number': block}) }}">Block #{{ block }}</li>
+            {% endif %}
+        </div>
+        <div class="row">
+            {% if assets is not null %}
+                {% for asset in assets %}
+                    <a style="color:black;" href="{{ path('asset_by_symbol', {'symbol': asset.symbol}) }}">{{ asset.symbol }}</li>
+                {% endfor %}
+            {% endif %}
+        </div>
+        <div class="row">
+            {% if accounts is not null %}
+                {% for account in accounts %}
+                    <a style="color:black;" href="{{ path('account_by_name', {'name': account.name}) }}">{{ account.name }}</li>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</section>
+{% endblock %}

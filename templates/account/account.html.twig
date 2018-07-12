@@ -1,0 +1,445 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-12">
+                <div class="row text-center">
+                    <div class="col-sm-4">
+                        <div class="panel mini-box">
+                            <p class="title">ID</p>
+                            <p class="number">{{ account.id }}</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="panel mini-box">
+                            <p class="title">Name</p>
+                            <p class="number">{{ account.name }}</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="panel mini-box">
+                            <p class="title">Registrar</p>
+                            <p class="number">{{ account.registrar.name }}</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="panel mini-box">
+                            <p class="title">Referrer</p>
+                            <p class="number">{{ account.referrer.name }}</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="panel mini-box">
+                            <p class="title">Lifetime referrer</p>
+                            <p class="number">{{ account.lifetime_referrer.name }}</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="panel mini-box">
+                            <p class="title"></p>
+                            <p class="number">-</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section portfolio-table">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="table-panel">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-10">
+                                <div class="nav tabs">
+                                    <h3 data-tab="tab-portf" class="active">Portfolio <span>{{ totalValue }}</span></h3>
+<!--
+                                    <h3 data-tab="tab-open-orders">Open Orders <span>5.81</span></h3>
+                                    <h3 data-tab="tab-margin-positions">Margin Positions <span>0.00</span></h3>
+-->
+                                    <h3 data-tab="tab-activity">Activity</h3>
+                                </div>
+                            </div>
+                            <div class="col-sm-2 col-xs-12 text-right">
+                                <form class="filterForm" name="FilterForm" id="FilterForm" action="" method="">
+                                    <div class="checkbox-group">
+                                        <input id="all" type="radio" name="filterStatus" value="all" checked="checked" />
+                                        <label for="all">active</label>
+                                    </div>
+                                    <div class="checkbox-group">
+                                        <input id="bit_usd" type="radio" name="filterStatus" value="bit_usd" />
+                                        <label for="bit_usd">hidden</label>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+
+                           <div class="panel-body table-responsive no-input tab_content active" id="tab-portf">
+                            <table class="table filter-table bgn">
+                                <thead>
+                                    <tr>
+                                        <th>Asset</th>
+                                        <th>Qty</th>
+                                        <th>Price (BTS)</th>
+                                        <th>24HR</th>
+                                        <th>Value (BTS)</th>
+                                        <th>Send</th>
+                                        <th>Buy</th>
+                                        <th>Deposit</th>
+                                        <th>Withdraw</th>
+                                        <th>Borrow</th>
+                                        <th>Settle</th>
+                                        <th>Hide</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+{% for balance in balances %}
+                                    <tr>
+                                        <td><a href="{{ path('asset_by_symbol', {'symbol': balance.asset.symbol}) }}">{{ balance.asset.symbol }}</a></td>
+                                        <td>{{ balance.amount }}</td>
+                                        <td>{{ balance.price }}</td>
+                                        <td><span class="change-plus">0%</span></td>
+                                        <td>{{ balance.value }}</td>
+                                        <td><a href=""><span class="export"></span></a></td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td><a href=""><span class="coin"></span></a></td>
+                                        <td><a href=""><span class="flag"></span></a></td>
+                                        <td><a href=""><span class="cancel"></span></a></td>
+                                    </tr>
+{% endfor %}
+                                </tbody>
+                                <tr class="table-footer">
+                                    <td>Total (BTS)</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ totalValue }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </div>
+
+<!--
+                        <div class="panel-body open-orders table-responsive no-input tab_content" id="tab-open-orders">
+                              <table class="table filter-table bgn">
+                                <thead>
+                                    <tr>
+                                        <th>Description</th>
+                                        <th>Price</th>
+                                        <th>Market price</th>
+                                        <th>Value</th>
+                                        <th>Trade</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>buy 0.0859 open.ETH for 77.9347 BITUSD</td>
+                                        <td>907.0028</td>
+                                        <td>907.0034</td>
+                                        <td>1.713 BTS</td>
+                                        <td><a href="#"><span class="bar-chart"></span></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>buy 0.0859 open.ETH for 77.9347 BITUSD</td>
+                                        <td>907.0028</td>
+                                        <td>907.0034</td>
+                                        <td>1.713 BTS</td>
+                                        <td><a href="#"><span class="bar-chart"></span></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>buy 0.0859 open.ETH for 77.9347 BITUSD</td>
+                                        <td>907.0028</td>
+                                        <td>907.0034</td>
+                                        <td>1.713 BTS</td>
+                                        <td><a href="#"><span class="bar-chart"></span></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>buy 0.0859 open.ETH for 77.9347 BITUSD</td>
+                                        <td>907.0028</td>
+                                        <td>907.0034</td>
+                                        <td>1.713 BTS</td>
+                                        <td><a href="#"><span class="bar-chart"></span></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>buy 0.0859 open.ETH for 77.9347 BITUSD</td>
+                                        <td>907.0028</td>
+                                        <td>907.0034</td>
+                                        <td>1.713 BTS</td>
+                                        <td><a href="#"><span class="bar-chart"></span></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>buy 0.0859 open.ETH for 77.9347 BITUSD</td>
+                                        <td>907.0028</td>
+                                        <td>907.0034</td>
+                                        <td>1.713 BTS</td>
+                                        <td><a href="#"><span class="bar-chart"></span></a></td>
+                                    </tr>
+
+
+                                </tbody>
+                                <tfoot class="table-footer">
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td><span>Total (BTS)  2,110,024.83</span></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+
+                        </div>
+
+                        <div class="panel-body margin-position table-responsive no-input tab_content" id="tab-margin-positions">
+                              <table class="table filter-table bgn">
+                                <thead>
+                                    <tr>
+                                        <th>Asset</th>
+                                        <th>Balance</th>
+                                        <th>Debit</th>
+                                        <th>Collateral</th>
+                                        <th>Ratio</th>
+                                        <th>Total (BTS)</th>
+                                        <th>Call price</th>
+                                        <th>Price</th>
+                                        <th>Units</th>
+                                        <th>Adjust</th>
+                                        <th>Close</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><a href="#">REPNOMTRUMP</a></td>
+                                        <td>0.00000</td>
+                                        <td>100.00000</td>
+                                        <td>100 BTS</td>
+                                        <td></td>
+                                        <td>100.00</td>
+                                        <td>0.57143</td>
+                                        <td></td>
+                                        <td>-BTS/REPNOMTRUMP</td>
+                                        <td><a href="#"><span class="scroll"></span></a></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">bitBTC</a></td>
+                                        <td>0.000000008</td>
+                                        <td>0.00000000</td>
+                                        <td>0 BTS</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td><a href="#"><span class="scroll"></span></a></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">BTWTY</a></td>
+                                        <td>0.000000008</td>
+                                        <td>0.00000000</td>
+                                        <td>0 BTS</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td><a href="#"><span class="scroll"></span></a></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">bitBTC</a></td>
+                                        <td>0.000000008</td>
+                                        <td>0.00000000</td>
+                                        <td>0 BTS</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td><a href="#"><span class="scroll"></span></a></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">BTWTY</a></td>
+                                        <td>0.000000008</td>
+                                        <td>0.00000000</td>
+                                        <td>0 BTS</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td><a href="#"><span class="scroll"></span></a></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr class="table-footer">
+                                        <td>Total (BTS)</td>
+                                        <td></td>
+                                        <td>2,110,024.83</td>
+                                        <td>0.0000</td>
+                                        <td></td>
+                                        <td>300 (BTS)</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+
+                        <div class="panel-body open-orders table-responsive no-input tab_content" id="tab-open-orders">
+                              <table class="table filter-table bgn">
+                                <thead>
+                                    <tr>
+                                        <th>Description</th>
+                                        <th>Price)</th>
+                                        <th>Market price</th>
+                                        <th>Value</th>
+                                        <th>Trade</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>buy 0.0859 open.ETH for 77.9347 BITUSD</td>
+                                        <td>907.0028</td>
+                                        <td>907.0034</td>
+                                        <td>1.713 BTS</td>
+                                        <td><span class="bar-chart"></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>buy 0.0859 open.ETH for 77.9347 BITUSD</td>
+                                        <td>907.0028</td>
+                                        <td>907.0034</td>
+                                        <td>1.713 BTS</td>
+                                        <td><span class="bar-chart"></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>buy 0.0859 open.ETH for 77.9347 BITUSD</td>
+                                        <td>907.0028</td>
+                                        <td>907.0034</td>
+                                        <td>1.713 BTS</td>
+                                        <td><span class="bar-chart"></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>buy 0.0859 open.ETH for 77.9347 BITUSD</td>
+                                        <td>907.0028</td>
+                                        <td>907.0034</td>
+                                        <td>1.713 BTS</td>
+                                        <td><span class="bar-chart"></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>buy 0.0859 open.ETH for 77.9347 BITUSD</td>
+                                        <td>907.0028</td>
+                                        <td>907.0034</td>
+                                        <td>1.713 BTS</td>
+                                        <td><span class="bar-chart"></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>buy 0.0859 open.ETH for 77.9347 BITUSD</td>
+                                        <td>907.0028</td>
+                                        <td>907.0034</td>
+                                        <td>1.713 BTS</td>
+                                        <td><span class="bar-chart"></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>buy 0.0859 open.ETH for 77.9347 BITUSD</td>
+                                        <td>907.0028</td>
+                                        <td>907.0034</td>
+                                        <td>1.713 BTS</td>
+                                        <td><span class="bar-chart"></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>buy 0.0859 open.ETH for 77.9347 BITUSD</td>
+                                        <td>907.0028</td>
+                                        <td>907.0034</td>
+                                        <td>1.713 BTS</td>
+                                        <td><span class="bar-chart"></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>buy 0.0859 open.ETH for 77.9347 BITUSD</td>
+                                        <td>907.0028</td>
+                                        <td>907.0034</td>
+                                        <td>1.713 BTS</td>
+                                        <td><span class="bar-chart"></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>buy 0.0859 open.ETH for 77.9347 BITUSD</td>
+                                        <td>907.0028</td>
+                                        <td>907.0034</td>
+                                        <td>1.713 BTS</td>
+                                        <td><span class="bar-chart"></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>buy 0.0859 open.ETH for 77.9347 BITUSD</td>
+                                        <td>907.0028</td>
+                                        <td>907.0034</td>
+                                        <td>1.713 BTS</td>
+                                        <td><span class="bar-chart"></span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="table-footer">
+                                <span>Total (BTS)  2,110,024.83</span>
+                            </div>
+                        </div>
+-->
+
+                        <div class="panel-body activity table-responsive no-input tab_content" id="tab-activity">
+                              <table class="table filter-table bgn">
+                                <thead>
+                                    <tr>
+                                        <th><span class="show-all">Show all</span></th>
+                                        <th>Info</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+{% for operation in history %}
+                                    <tr>
+                                        <td class="place-order">{{ operation.helper.typeTitle }}</td>
+                                        <td>
+                                            <a href="#"></a>
+                                            <p>{{ operation.helper.description }}</p>
+                                            <p><a href="{{ path('home_block', {'number': operation.block_num}) }}">Block #{{ operation.block_num }}</a> (TRX #{{ operation.trx_in_block }})</p>
+                                            <td>-</td>
+                                        </td>
+                                    </tr>
+{% endfor %}
+                                </tbody>
+                                    <tfoot class="table-footer">
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td><a href="#" class="excel-file"></a><a href="#" class="arrow"></a></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+
+                        </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

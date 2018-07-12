@@ -1,0 +1,19 @@
+<div class="profile-event transactions operation_slide_{{ transaction__operation__helper.getTypeAlias(true) }}">
+    <div class="block block-a" style="background-color:{{ transaction__operation__helper.getColor() }};">
+        <p>{{ transaction__operation__helper.getTypeTitle() }}</p>
+    </div>
+    <div class="block block-b">
+    </div>
+    <div class="block block-c">
+        <a href="#" data-toggle="tooltip" data-placement="bottom" title="Transaction Hash" class="previous">{{ transaction__operation__helper.getTypeTitle() }}</a>
+        <p class="from_to"><span>From</span><a href="{{ path('account_by_name', {'name': transaction__account__name}) }}">{{ transaction__account__name }}</a></p>
+        <p></p>
+        <p class="event {{ transaction__operation__helper.getColor() }}">
+            {{ transaction__description|truncate(55) }}
+        </p>
+    </div>
+    <div class="block block-d">
+        <a href="/block/{{ transaction__operation__block_num }}{# path('block', {'number': transaction__operation__block_num}) #}">Block #{{ transaction__operation__block_num }} (trx: {{ transaction__operation__trx_in_block }})</a>
+        <p>> {{ transaction__date }}</p>
+    </div>
+</div>

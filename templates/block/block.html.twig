@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="panel mb0 panel-default grid-block block-id-header">
+                        <a href="{{ path('block_by_number', {'number': block.number - 1}) }}" class="prev arrow-ico"><span></span></a>
+                        <h3 class="grid-block-title">Block#{{ block.number }}</h3>
+                        <a href="{{ path('block_by_number', {'number': block.number +
+                         1}) }}" class="next arrow-ico"><span></span></a>
+                        <p class="date">Date: <span>{{ block.date }}</span></p>
+                        <p class="witness">Witness: <a href="#">{{ block.witness }}</a></p>
+                        <p class="previous">Previous: <span>{{ block.previous }}</span></p>
+                        <p class="transaction-count">Transaction count: <span>{{ block.transactions|length }}</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="row">
+
+{% for transaction in block.transactions %}
+            <div class="col-xs-12 col-sm-6">
+                <div class="table-panel mb17">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-9">
+                                <h3>{{ transaction.operationTitle }}</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body table-responsive">
+                        <table class="table bgn">
+                            <tbody>
+                                <tr>
+                                    <td>Operation</td>
+                                    <td>{{ transaction.operationDescription }}</td>
+                                    <!-- <td>5.724532BTS/BITCNY</td> -->
+                                </tr>
+                                <tr>
+                                    <td>Expiration</td>
+                                    <td>{{ transaction.expiration|date('d.m.Y H:i:s') }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Fee</td>
+                                    <td>{{ transaction.operationFee }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+{% endfor %}
+
+        </div>
+    </div>
+</section>
+{% endblock %}

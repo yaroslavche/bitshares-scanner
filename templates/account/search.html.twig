@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <form id="lookup_account_form" method="post" role="search">
+                    <div class="form-group account_search">
+                        <div>
+                            <input id='account_name' type="text" class="form-control" placeholder="Account name" value=""></input>
+                            <button></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="table-panel committe-table">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-12 col-lg-7">
+                                <h3>Accounts</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body table-responsive">
+                        <table class="table filter-table grid-list-table list">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                </tr>
+                            </thead>
+                            <tbody id="accountsTableBody">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

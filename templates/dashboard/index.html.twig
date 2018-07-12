@@ -1,0 +1,203 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+{# set blockData = {'number': 1, 'witness_name': 'test', 'date': '27.03.2018', 'time_ago':'15s', 'transactions':[]} #}
+{# include 'dashboard/block.html.twig' with blockData #}
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-6">
+                <div class="service-block service-block-blue">
+                    <div class="service-block-left col-md-10 col-xs-9 col-lg-9">
+                        <div class="service-block-top">
+                            <div class="sbl">
+                                <img src="/images/globe-icon.png" alt="">
+                            </div>
+                            <div class="sbr">
+                                <a href="#" class="service-heading" data-toggle="tooltip" data-placement="bottom" title="View More">MARKET CAP</a>
+                                <h4>
+                                    <a href="#">{{ '%.2f'|format(BTSMarketCap) }} BTS </a>
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="service-block-bottom">
+                            <div class="col-xs-4">
+                                <a href="javascript:;" data-toggle="tooltip">Last Block</a>
+                                <h4>
+                                    <a href="{{ path('block_by_number', {'number': dynamicGlobalProperties.head_block_number}) }}" data-toggle="tooltip" data-placement="bottom" class="head_block_number">{{ dynamicGlobalProperties.head_block_number|number_format(0, '.', ',') }}</a>
+
+                                </h4>
+                            </div>
+                            <div class="col-xs-4">
+                                <a href="javascript:;" data-toggle="tooltip">Transactions</a>
+                                <h4>
+                                    <span class="head_block_trx">-</span>
+                                </h4>
+                            </div>
+                            <div class="col-xs-4">
+                                <a href="javascript:;" data-toggle="tooltip">INTERVAL BLOCK</a>
+                                <h4>
+                                    <a href="javascript:;">{{ globalProperties.parameters.block_interval }} seconds</a>
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-block-right col-md-2 col-lg-3 col-xs-3">
+                        <div>
+                            <p class="sb-inf">NEW USERS</p>
+                            <span>{{ dynamicGlobalProperties.accounts_registered_this_interval }}</span>
+                        </div>
+                        <div>
+                            <p class="sb-inf">witnesses</p>
+                            <span>{{ witnessCount }}</span>
+                        </div>
+                        <div>
+                            <p class="sb-inf">committee</p>
+                            <span>{{ committeeCount }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6">
+                <div class="row text-center">
+                    <div class="col-sm-4">
+                        <div class="panel mini-box">
+                            <p class="title">CURRENT BLOCK</p>
+                            <p class="number"><a class="head_block_number current_block" href="{{ path('block_by_number', {'number': dynamicGlobalProperties.head_block_number}) }}">{{ dynamicGlobalProperties.head_block_number|number_format(0, '.', ',') }}</a></p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="panel mini-box">
+                            <p class="title">Current Aslot</p>
+                            <p class="number">{{ dynamicGlobalProperties.current_aslot }}</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="panel mini-box">
+                            <p class="title">CURRENT SUPPLY</p>
+                            <p class="number">{{ '%.2f'|format(currentSupply) }} BTS</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="panel mini-box">
+                            <p class="title">STEALTH SUPPLY</p>
+                            <p class="number">{{ '%.2f'|format(confidentalSupply) }} BTS</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="panel mini-box">
+                            <p class="title">TRX/BLOCK</p>
+                            <p class="number trx_per_block">-</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="panel mini-box">
+                            <p class="title">TRX/SECOND</p>
+                            <p class="number trx_per_second">-</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section mt_minus15 mb15">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-6">
+                <div class="panel panel-profile no-bg">
+                    <div class="panel-heading overflow-h">
+                        <img class="panel-ico-1 panel-ico" src="/images/cubes.png" alt="">
+                        <h2 class="panel-title heading-sm">Blocks</h2>
+                        <!--
+                        <a href="/" class="btn-profile pull-right panel-link">View All</a>
+                        -->
+                    </div>
+                    <div class="panel-body nano">
+                        <div class="nano-content" id="blocks_container">
+                            <img src="/images/preloader.gif" style="text-align: center;margin: 20px auto 0 !important;width: 64px;display: block;" />
+{% for block in latestBlocks %}
+                            <div class="profile-event slide-bg-f6fbff">
+                                <div class="profile-event-left">
+                                    <div class="profile-event-id">
+                                        <a href="{{ path('block_by_number', {'number': block.number}) }}">BLOCK ID</a>
+                                        <p>{{ block.number|number_format(0, '.', ',') }}</p>
+                                    </div>
+                                </div>
+                                <div class="profile-event-right">
+                                    <span>Witness</span>
+                                    <a href="#" data-toggle="tooltip" data-placement="bottom" title="Transaction Hash">{{ block.witness }}</a>
+                                    <p class="time-ago"><span class="time">{{ block.timestamp.format('d/m/Y') }}</span></p>
+                                    <p class="transaction">TRANSACTION COUNT {{ block.transactionsCount }}</p>
+                                </div>
+                            </div>
+{% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6">
+                <div class="panel panel-profile no-bg">
+                    <div class="panel-heading overflow-h">
+                        <img class="panel-ico-2 panel-ico" src="/images/credit-card.png" alt="">
+                        <h2 class="panel-title heading-sm">Transactions</h2>
+                        <!--
+                        <a href="/" class="btn-profile pull-right panel-link">View All</a>
+                        -->
+                    </div>
+                    <div class="panel-body nano">
+                        <div class="nano-content" id="transactions_container">
+                            <img src="/images/preloader.gif" style="text-align: center;margin: 20px auto 0 !important;width: 64px;display: block;" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    var socket = new WebSocket('{{ ws }}');
+
+    socket.onopen = function(event)
+    {
+        socket.send('{"jsonrpc":"2.0","method":"call","params":[1,"login",["",""]],"id":1}');
+        socket.send('{"jsonrpc":"2.0","method":"call","params":[1,"database",[]],"id":2}');
+        socket.send('{"jsonrpc":"2.0","method":"call","params":[2,"set_subscribe_callback",[1,true]],"id":3}');
+        // socket.send('{"jsonrpc":"2.0","method":"call","params":[2,"cancel_all_subscriptions",[]],"id":4}');
+    }
+
+    let transactionHistoryCollection = [];
+    let blocksCollection = [];
+
+    socket.onmessage = function(message)
+    {
+        const data = JSON.parse(message.data);
+        if(typeof data.method == 'string' && data.method == 'notice')
+        {
+            const
+                subscriptionId = data.params[0],
+                subscriptionData = data.params[1][0];
+            if(typeof subscriptionData[0] == 'object')
+            {
+                jQuery.post('{{ path('dashboard_subscribe') }}', {subscriptionData}, function(response) {
+                    jQuery.each(response.transactions, function(i, trxHtml) {
+                        transactionHistoryCollection.unshift(trxHtml);
+                    });
+                    blocksCollection = response.blocks;
+                    jQuery('#transactions_container').html('<div>' + transactionHistoryCollection.join('</div><div>') + '</div>');
+                    jQuery('#blocks_container').html('<div>' + blocksCollection.join('</div><div>') + '</div>');
+                    jQuery('.head_block_number').html(response.head_block_number);
+                    jQuery('.head_block_trx').html(response.head_block_trx);
+                    jQuery('.trx_per_second').html(response.trx_per_second);
+                    jQuery('.trx_per_block').html(response.trx_per_block);
+                }, 'json');
+                if(transactionHistoryCollection.length > 20) {
+                    transactionHistoryCollection.splice(20, transactionHistoryCollection.length - 20);
+                }
+            }
+        }
+    }
+</script>
+{% endblock %}

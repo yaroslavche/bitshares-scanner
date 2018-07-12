@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="table-panel committe-table">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-12 col-lg-7">
+                                <h3>committee</h3>
+                                <p class="table-desc">Total number of active committee members: {{ activeCommitteeMembers|length }}</p>
+                                <div class="grid-list-toggle">
+                                    <span class="list active" title="List"></span>
+                                    <span class="grid" title="Grid"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body table-responsive">
+                        <table class="table filter-table grid-list-table list">
+                            <thead>
+                                <tr>
+                                    <th>Rank</th>
+                                    <th>Name</th>
+                                    <th></th>
+                                    <th></th>
+                                    <th>Votes</th>
+                                    <th>Webpage</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+{% for committee in committeeMembers %}
+{% set isActive = '' %}
+{% if committee in activeCommitteeMembers %}
+    {% set isActive = 'active' %}
+{% endif %}
+                                <tr class="{{ isActive }}">
+                                    <td>{{ loop.index }}</td>
+                                    <td><a href="{{ path('committee_index') }}">{{ committee.committee_member_account.name }}</a></td>
+                                    <td><a href="#">#{{ loop.index }}: {{ committee.committee_member_account.name }}</a></td>
+                                    <td><img src="/images/witnesses/witness-yao.png" alt=""></td>
+                                    <td><span class="hidden-in-list">Votes: </span>{{ committee.total_votes }}</td>
+                                    <td><a href="{{ committee.url }}">{{ committee.url }}</a></td>
+                                </tr>
+{% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+<style> tr.active { background-color: #3DB124 !important; } </style>
+{% endblock %}

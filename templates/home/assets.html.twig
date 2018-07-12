@@ -1,0 +1,155 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+<section class="section">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-md-6">
+				<div class="row text-center">
+	                <div class="col-sm-4">
+	                    <div class="panel mini-box">
+                            <p class="title">24H VOLUME IN BTS</p>
+                            <p class="number">23,558,275</p>
+	                    </div>
+	                </div>
+	                <div class="col-sm-4">
+	                    <div class="panel mini-box">
+                            <p class="title">24H VOLUME IN USD</p>
+                            <p class="number">23,558,275</p>
+	                    </div>
+	                </div>
+	                <div class="col-sm-4">
+	                    <div class="panel mini-box">
+                            <p class="title">24H VOLUME IN CNY</p>
+                            <p class="number">23,558,275</p>
+	                    </div>
+	                </div>
+	                <div class="col-sm-4">
+	                    <div class="panel mini-box">
+                            <p class="title">24H MARKET CAP IN BTS</p>
+                            <p class="number">23,558,275</p>
+	                    </div>
+	                </div>
+	                <div class="col-sm-4">
+	                    <div class="panel mini-box">
+                            <p class="title">24H MARKET CAP IN USD</p>
+                            <p class="number">23,558,275</p>
+	                    </div>
+	                </div>
+	                <div class="col-sm-4">
+	                    <div class="panel mini-box">
+                            <p class="title">24H MARKET CAP IN CNY</p>
+                            <p class="number">23,558,275</p>
+	                    </div>
+	                </div>
+	            </div>
+			</div>
+			<div class="col-xs-12 col-md-6">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<div id="volume_chart" style="height: 225px;"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section mt_minus15">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+
+				<div class="table-panel">
+					<div class="panel-heading">
+						<div class="row">
+							<div class="col-xs-12 col-lg-9">
+								<h3>Assets</h3>
+								<form class="filterForm" name="FilterForm" id="FilterForm" action="" method="">
+									<div class="checkbox-group">
+										<input id="all" type="radio" name="filterStatus" value="all" checked="checked" />
+										<label for="all">All</label>
+									</div>
+									<div class="checkbox-group">
+										<input id="smart_coins" type="radio" name="filterStatus" value="smart_coins" />
+										<label for="smart_coins">SmartCoins</label>
+									</div>
+									<div class="checkbox-group">
+										<input id="user_issued_assets" type="radio" name="filterStatus" value="user_issued_assets" />
+										<label for="user_issued_assets">User Issued Assets</label>
+									</div>
+									<div class="checkbox-group">
+										<input id="core_token" type="radio" name="filterStatus" value="core_token" />
+										<label for="core_token">Core Token</label>
+									</div>
+
+								</form>
+							</div>
+						</div>
+					</div>
+			        <div class="panel-body table-responsive">
+			            <table class="table filter-table">
+			                <thead>
+			                    <tr>
+			                        <th></th>
+			                        <th>Name</th>
+			                        <th>Price</th>
+			                        <th>24H Volume</th>
+									<th>Type</th>
+									<th>Market Cap</th>
+			                        <th>Supply</th>
+			                        <th>Holders</th>
+			                    </tr>
+			                </thead>
+			                <tbody>
+			                	<tr>
+			                		<td class="all"><img src="/images/currency/bts.png" alt=""></td>
+			                		<td class="all"><a href="#">BTS</a></td>
+			                		<td class="all">1 <a href="">BTS</a></td>
+			                		<td class="all">2,607,448,307 <a href="#">BTS</a></td>
+			                		<td class="all core_token">Core Token (Native)</td>
+			                		<td class="all">2,607,448,307 <a href="#">BTS</a></td>
+			                		<td class="all">2,607,448,307</td>
+			                		<td class="all">91,861</td>
+			                	</tr>
+			                	<tr>
+			                		<td class="all"><img src="/images/currency/cny.png" alt=""></td>
+			                		<td class="all"><a href="#">CNY</a></td>
+			                		<td class="all">7 <a href="">BTS</a></td>
+			                		<td class="all">2,607,448,307 <a href="#">BTS</a></td>
+			                		<td class="all user_issued_assets">User Issued (Gateway)</td>
+			                		<td class="all">2,507,448,307 <a href="#">BTS</a></td>
+			                		<td class="all">2,407,448,307</td>
+			                		<td class="all">1,961</td>
+			                	</tr>
+			                	<tr>
+			                		<td class="all"><img src="/images/currency/cny.png" alt=""></td>
+			                		<td class="all"><a href="#">CNY</a></td>
+			                		<td class="all">2 <a href="">BTS</a></td>
+			                		<td class="all">2,607,448,307 <a href="#">BTS</a></td>
+			                		<td class="all user_issued_assets">User Issued (Gateway)</td>
+			                		<td class="all">2,607,448,307 <a href="#">BTS</a></td>
+			                		<td class="all">2,607,448,307</td>
+			                		<td class="all">1,861</td>
+			                	</tr>
+			                	<tr>
+			                		<td class="all"><img src="/images/currency/usd.png" alt=""></td>
+			                		<td class="all"><a href="#">USD</a></td>
+			                		<td class="all">1 <a href="">BTS</a></td>
+			                		<td class="all">3,607,448,307 <a href="#">BTS</a></td>
+			                		<td class="all smart_coins">SmartCoin (Native)</td>
+			                		<td class="all">5,607,448,307 <a href="#">BTS</a></td>
+			                		<td class="all">7,607,448,307</td>
+			                		<td class="all">90,861</td>
+			                	</tr>
+			                </tbody>
+		                </table>
+	                </div>
+                </div>
+
+
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock %}

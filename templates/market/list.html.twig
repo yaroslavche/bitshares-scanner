@@ -1,0 +1,84 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+
+                <div class="table-panel">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-12 col-lg-9">
+                                <h3>Markets</h3>
+                                <!--
+                                <form class="filterForm" name="FilterForm" id="FilterForm" action="" method="">
+                                    <div class="checkbox-group">
+                                        <input id="all" type="radio" name="filterStatus" value="all" checked="checked" />
+                                        <label for="all">All </label>
+                                    </div>
+                                    <div class="checkbox-group">
+                                        <input id="rate-star-hot" type="radio" name="filterStatus" value="rate-star-hot"/>
+                                        <label for="rate-star-hot">Show <span class="rate-star-hot-ico"></span>only</label>
+                                    </div>
+                                    <div class="checkbox-group">
+                                        <input id="bit_usd" type="radio" name="filterStatus" value="bit_usd" />
+                                        <label for="bit_usd">bitUSD</label>
+                                    </div>
+                                    <div class="checkbox-group">
+                                        <input id="open_btc" type="radio" name="filterStatus" value="open_btc" />
+                                        <label for="open_btc">open.BTC</label>
+                                    </div>
+                                    <div class="checkbox-group">
+                                        <input id="bit_cny" type="radio" name="filterStatus" value="bit_cny" />
+                                        <label for="bit_cny">bitCNY</label>
+                                    </div>
+                                    <div class="checkbox-group">
+                                        <input id="bts" type="radio" name="filterStatus" value="bts" />
+                                        <label for="bts">BTS</label>
+                                    </div>
+                                    <div class="checkbox-group">
+                                        <input id="bit_btc" type="radio" name="filterStatus" value="bit_btc" />
+                                        <label for="bit_btc">bitBTC</label>
+                                    </div>
+                                </form>
+                                -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body table-responsive markets-table">
+                        <table class="table filter-table">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Market</th>
+                                    <!--
+                                    <th>Quote supply</th>
+                                    -->
+                                    <th>Vol</th>
+                                    <th>Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+{% for market in markets %}
+                                <tr>
+                                    <td class="rate-star-hot">{{ loop.index }}</td>
+                                    <td class="all"><a href="#">{{ market.pair }}</a></td>
+                                    <!--
+                                    <td class="all">supply <a href="#">BTS</a></td>
+                                    -->
+                                    <td class="all">{{ market.volume }}</td>
+                                    <td class="all bts">{{ market.price }}</td>
+                                </tr>
+{% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,103 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-4">
+                <div class="table-panel witness-panel fixed">
+                    <div class="panel-body table-responsive">
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <th>Current witness</th>
+                                    <td>{{ currentWitness.witness_account.name }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Active Witnesses</th>
+                                    <td>{{ activeWitnesses|length }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Participation rate</th>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <th>Pay-per-block</th>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <th>Remaining budget</th>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <th>Next vote update</th>
+                                    <td>-</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-8">
+                <div class="table-panel witness-table">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-12 col-lg-7">
+                                <h3>witnesses</h3>
+                                <div class="grid-list-toggle">
+                                    <span class="list active" title="List"></span>
+                                    <span class="grid" title="Grid"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body table-responsive">
+                        <table class="table filter-table grid-list-table list">
+                            <thead>
+                                <tr>
+                                    <th>Rank</th>
+                                    <th>Name</th>
+                                    <th></th>
+                                    <th></th>
+                                    <th>Last block</th>
+                                    <th>Last confirmed</th>
+                                    <th>Blocks missed</th>
+                                    <th>Votes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+{% for witness in witnesses %}
+    {% set isActive = '' %}
+    {% if witness in activeWitnesses %}
+        {% set isActive = 'active' %}
+    {% endif %}
+    {% set witnessLink = witness.witness_account.name %}
+    {% if witness.url != false %}
+        {% set witnessLink = "<a href=\"#{witness.url}\">#{witness.witness_account.name}</a>" %}
+    {% endif %}
+                                <tr class="{{ isActive }}">
+                                    <td>{{ loop.index }}</td>
+                                    <!-- <td><a href="{{ path('account_by_name', {'name': witness.witness_account.name}) }}">{{ witness.witness_account.name }}</a></td> -->
+                                    <td>{{ witnessLink|raw }}</td>
+                                    <td><a href="{{ path('account_by_name', {'name': witness.witness_account.name}) }}">#{{ loop.index }}: {{ witness.witness_account.name }}</a></td>
+                                    <td><img src="/images/witnesses/in-abit.png" alt=""></td>
+                                    <td><span class="hidden-in-list">Last block</span>-</td> <!-- time ago -->
+                                    <td><span class="hidden-in-list">Last confirmed</span>{{ witness.last_confirmed_block_num }}</td>
+                                    <td><span class="hidden-in-list">Blocks missed</span>{{ witness.total_missed }}</td>
+                                    <td><span class="hidden-in-list">Votes</span>{{ witness.total_votes }}</td>
+                                </tr>
+{% endfor %}
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+<style> tr.active { background-color: #3DB124 !important; } </style>
+{% endblock %}

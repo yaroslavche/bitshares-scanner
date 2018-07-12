@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ru"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bitshares Sсan</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+
+    <link href="/images/favicon.png" rel="shortcut icon" />
+    <!-- stylesheets -->
+    <link href="/css/grid.css" rel="stylesheet">
+    <link href="/css/slick.css" rel="stylesheet">
+    <link href="/css/slick-theme.css" rel="stylesheet">
+    <link href="/css/nanoscroller.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/responsive.css" rel="stylesheet">
+
+    <link href="/css/object_history_types.css" rel="stylesheet">
+
+</head>
+<body>
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-6 col-sm-9">
+                        <div class="currency-slider">
+
+                        </div>
+
+                    </div>
+                    <div class="col-xs-6 col-sm-3 text-right">
+                        <a target="_blank" href="https://openledger.io/create-account" class="createAcc">
+                            <img src="/images/user-icon.png" alt="">
+                            Create Account
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <button class="hamburger hamburger--collapse" type="button">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </button>
+                        <nav>
+                            <a class="brand" href="/">
+                                <img src="/images/logo-icon.png" alt="">
+                                Bitshares Sсan
+                            </a>
+                            <ul>
+                                <li{% if app.request.get('_route') == 'dashboard_index' %} class="active"{% endif %}>
+                                    <a href="{{ path('dashboard_index') }}">Blockchain</a>
+                                </li>
+                                <li{% if app.request.get('_route') == 'asset_index' %} class="active"{% endif %}>
+                                    <a href="{{ path('asset_index') }}">Assets</a>
+                                </li>
+                                <li{% if app.request.get('_route') == 'account_index' %} class="active"{% endif %}>
+                                    <a href="{{ path('account_index') }}">Accounts</a>
+                                </li>
+                                <li{% if app.request.get('_route') == 'witness_index' %} class="active"{% endif %}>
+                                    <a href="{{ path('witness_index') }}">Witnesses</a>
+                                </li>
+                                <li{% if app.request.get('_route') == 'committee_index' %} class="active"{% endif %}>
+                                    <a href="{{ path('committee_index') }}">Committee</a>
+                                </li>
+                                <li{% if app.request.get('_route') == 'market_index' %} class="active"{% endif %}>
+                                    <a href="{{ path('market_index') }}">Markets</a>
+                                </li>
+                                <li{% if app.request.get('_route') == 'fee_schedule_index' %} class="active"{% endif %}>
+                                    <a href="{{ path('fee_schedule_index') }}">Fee Schedule</a>
+                                </li>
+                            </ul>
+                            <form action="{{ path('dashboard_search') }}" method="post" class="form-default searchForm">
+                                <input type="search" results="5" name="search" autosave="unique" placeholder="Find users, assest, blocks">
+                                <button></button>
+                            </form>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </header>
+    <div class="pt95"></div>
+    <div class="wrapper"> <!-- Start Wrapper -->

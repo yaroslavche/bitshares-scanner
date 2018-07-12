@@ -1,0 +1,14 @@
+<div class="profile-event slide-bg-f6fbff">
+    <div class="profile-event-left">
+        <div class="profile-event-id">
+            <a href="{{ path('block_by_number', {'number': blockData.number}) }}">BLOCK ID</a>
+            <p>{{ blockData.number|number_format(0, '.', ',') }}</p>
+        </div>
+    </div>
+    <div class="profile-event-right">
+        <span>Witness</span>
+        <a href="#" data-toggle="tooltip" data-placement="bottom" title="Transaction Hash">{{ witness.witness_account.name }}</a>
+        <p class="time-ago"><span class="time">{{ blockData.timestamp.format('d.m.Y H:i:s') }}</span></p>
+        <p class="transaction">TRANSACTION COUNT {{ blockData.transactionsCount }}</p>
+    </div>
+</div>
